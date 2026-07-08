@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me | MIVA Portfolio</title>
+  <style>
+/* ====== THEME: WHITE, NAVY, RED, LIGHT BROWN ====== */
+    :root{
+      --navy: #1a2b4c;      
+      --red: #c62828;       
+      --brown: #d7c9b6;     
+      --white: #ffffff;     
+      --light-bg: #f8f8f8;
+    }
+
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--light-bg);
+      color: #333;
+    }
+    .page-wrap {
+      max-width: 1100px;
+      margin: 30px auto;
+      background: var(--white);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border: 1px solid #e0e0e0;
+    }
+    /* ====== SAME THEME AS CONTACT + PLANNER PAGES ====== */
+      /* ====== NAVIGATION ====== */
+    header {
+      background: #fff; 
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 55px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 0;
+      border: 1px solid #ddd;
+    }
+    nav ul li a {
+      display: block;
+      padding: 12px 18px;
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+      border-right: 1px solid #ddd;
+      transition: 0.2s;
+    }
+    nav ul li:last-child a {border-right: none;}
+    nav ul li a.active {background: var(--navy); color: var(--white); font-weight: bold;}
+    nav ul li a:hover {background: var(--red); color: var(--white);}
+    .menu-btn {display: none; font-size: 26px; cursor: pointer; color: var(--navy);}
+
+    .banner {
+      background: #d7c9b6; /* LIGHT BROWN */
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .banner h1 {
+      margin: 0;
+      font-size: 36px;
+      color: #1a2b4c; /* NAVY */
+      font-family: Georgia, serif;
+    }
+    .content {
+      padding: 30px 40px;
+    }
+    .content h2 {
+      color: #1a2b4c; /* NAVY */
+      border-bottom: 2px solid #d7c9b6; /* LIGHT BROWN LINE */
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+    
+    /* ====== FORM STYLES ====== */
+    .contact-form label {
+      display: block;
+      font-weight: bold;
+      color: #1a2b4c;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    .contact-form input, 
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+    .contact-form input:focus, 
+    .contact-form textarea:focus {
+      border-color: #c62828; /* RED */
+      outline: none;
+    }
+    .contact-form button {
+      background: #1a2b4c; /* NAVY */
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.2s;
+    }
+    .contact-form button:hover {
+      background: #c62828; /* RED */
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 13px;
+      color: #666;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      margin-top: 30px;
+    }
+    /* ====== MOBILE FRIENDLY ====== */
+    @media (max-width: 992px) {
+      .projects-grid {grid-template-columns: repeat(2, 1fr);}
+    }
+    @media (max-width: 768px) {
+      .page-wrap {margin: 0; box-shadow: none; border: none;}
+      .menu-btn {display: block;}
+      nav {padding: 0 20px;}
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        border: none;
+        border-top: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      nav ul.show {display: flex;}
+      nav ul li a {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 15px 20px;
+        font-size: 16px;
+      }
+      .banner {padding: 30px 20px;}
+      .banner h1 {font-size: 28px;}
+      .container {padding: 25px 20px;}
+      .projects-grid {grid-template-columns: 1fr;}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    
+    <!-- NAV -->
+<header>
+    <nav>
+      <ul id="navMenu">
+       <li><a href="index.html">Home</a></li>
+       <li><a href="about.html">About me</a></li>
+       <li><a href="projects.html">Projects</a></li>
+       <li><a href="planner.html">Academic planner</a></li>
+       <li><a href="contact.html" class="active">Contact me</a></li>
+      </ul>
+      <div class="menu-btn" onclick="document.getElementById('navMenu').classList.toggle('show')">☰</div>
+    </nav>
+  </header>
+
+    <!-- BANNER -->
+    <div class="banner">
+      <h1>Contact Me</h1>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+      <h2>Get In Touch</h2>
+      <p>Please fill the form below to contact Oluwaseyi Alade.</p>
+
+      <form class="contact-form" action="#" method="post">
+        <!-- 1. Name -->
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <!-- 2. Email Address -->
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- 3. Phone Number -->
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <!-- 4. Message -->
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      © Copyright 2026 Oluwaseyi Alade. All Rights Reserved.
+    </footer>
+
+  </div>
+</body>
+</html>

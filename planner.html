@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Planner | MIVA Portfolio</title>
+  <style>
+  /* ====== THEME: WHITE, NAVY, RED, LIGHT BROWN ====== */
+    :root{
+      --navy: #1a2b4c;      
+      --red: #c62828;       
+      --brown: #d7c9b6;     
+      --white: #ffffff;     
+      --light-bg: #f8f8f8;
+    }
+
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--light-bg);
+      color: #333;
+    }
+    .page-wrap {
+      max-width: 1100px;
+      margin: 30px auto;
+      background: var(--white);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border: 1px solid #e0e0e0;
+    }
+    /* ====== SAME THEME AS CONTACT + PLANNER PAGES ====== */
+      /* ====== NAVIGATION ====== */
+    header {
+      background: #fff; 
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 55px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 0;
+      border: 1px solid #ddd;
+    }
+    nav ul li a {
+      display: block;
+      padding: 12px 18px;
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+      border-right: 1px solid #ddd;
+      transition: 0.2s;
+    }
+    nav ul li:last-child a {border-right: none;}
+    nav ul li a.active {background: var(--navy); color: var(--white); font-weight: bold;}
+    nav ul li a:hover {background: var(--red); color: var(--white);}
+    .menu-btn {display: none; font-size: 26px; cursor: pointer; color: var(--navy);}
+
+    /* ====== BANNER ====== */
+    .banner {
+      background: #d7c9b6; /* LIGHT BROWN */
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .banner h1 {
+      margin: 0;
+      font-size: 36px;
+      color: #1a2b4c; /* NAVY */
+      font-family: Georgia, serif;
+    }
+    .content {
+      padding: 30px 40px;
+    }
+    .content h2 {
+      color: #1a2b4c;
+      border-bottom: 2px solid #d7c9b6;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+    
+    /* ====== INTERACTIVE FORM + TABLE ====== */
+    .add-task {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .add-task input {
+      flex: 1 1 150px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .add-task input:focus {border-color: #c62828; outline: none;} /* RED FOCUS */
+    .add-task button {
+      background: #1a2b4c; /* NAVY */
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .add-task button:hover {background: #c62828;} /* RED HOVER */
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    table th {
+      background: #1a2b4c; /* NAVY */
+      color: #fff;
+      padding: 12px;
+      text-align: left;
+    }
+    table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+    }
+    table tr:nth-child(even) {background: #f8f8f8;}
+    .btn-table {
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      margin-right: 5px;
+    }
+    .btn-done {background: #1a2b4c; color: #fff;} /* NAVY */
+    .btn-del {background: #c62828; color: #fff;} /* RED */
+    .done-row td {
+      text-decoration: line-through;
+      color: #888;
+      background: #f0f0f0;
+    }
+    .empty-msg td {
+      text-align: center;
+      font-style: italic;
+      color: #777;
+      padding: 20px;
+    }
+    /* ====== MOBILE FRIENDLY ====== */
+    @media (max-width: 992px) {
+      .projects-grid {grid-template-columns: repeat(2, 1fr);}
+    }
+    @media (max-width: 768px) {
+      .page-wrap {margin: 0; box-shadow: none; border: none;}
+      .menu-btn {display: block;}
+      nav {padding: 0 20px;}
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        border: none;
+        border-top: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      nav ul.show {display: flex;}
+      nav ul li a {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 15px 20px;
+        font-size: 16px;
+      }
+      .banner {padding: 30px 20px;}
+      .banner h1 {font-size: 28px;}
+      .container {padding: 25px 20px;}
+      .projects-grid {grid-template-columns: 1fr;}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    
+    <!-- NAV - SAME AS ALL PAGES -->
+   <header>
+    <nav>
+      <ul id="navMenu">
+       <li><a href="index.html">Home</a></li>
+       <li><a href="about.html">About me</a></li>
+       <li><a href="projects.html">Projects</a></li>
+       <li><a href="planner.html" class="active">Academic planner</a></li>
+       <li><a href="contact.html">Contact me</a></li>
+      </ul>
+      <div class="menu-btn" onclick="document.getElementById('navMenu').classList.toggle('show')">☰</div>
+    </nav>
+  </header>
+
+    <!-- BANNER - SAME LIGHT BROWN -->
+    <div class="banner">
+      <h5>Oluwaseyi Alade's</h1>
+      <h1>Academic Planner</h1>
+    </div>
+
+    <!-- CONTENT - SAME WHITE BOX -->
+    <div class="content">
+      <h2>My Semester Tasks</h2>
+      
+      <!-- ADD TASK FORM -->
+      <div class="add-task">
+        <input type="text" id="taskTitle" placeholder="Task e.g. CSC 106 Assignment">
+        <input type="date" id="taskDate">
+        <button onclick="addTask()">Add Task</button>
+      </div>
+
+      <!-- TASK TABLE -->
+      <table id="taskTable">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Due Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="taskBody">
+          <tr class="empty-msg"><td colspan="3">No tasks yet. Add one above.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    let tasks = JSON.parse(localStorage.getItem('mvaPlannerTable')) || [];
+    document.addEventListener('DOMContentLoaded', render);
+
+    function addTask() {
+      const title = document.getElementById('taskTitle').value.trim();
+      const date = document.getElementById('taskDate').value;
+      if (title === '' || date === '') return alert('Enter Task and Due Date');
+      
+      tasks.push({id: Date.now(), title, date, done: false});
+      save();
+      render();
+      document.getElementById('taskTitle').value = '';
+      document.getElementById('taskDate').value = '';
+    }
+
+    function render() {
+      const body = document.getElementById('taskBody');
+      if (tasks.length === 0) {
+        body.innerHTML = '<tr class="empty-msg"><td colspan="3">No tasks yet. Add one above.</td></tr>';
+        return;
+      }
+      body.innerHTML = tasks.map(t => `
+        <tr class="${t.done ? 'done-row' : ''}">
+          <td>${t.title}</td>
+          <td>${new Date(t.date+'T00:00:00').toLocaleDateString('en-GB')}</td>
+          <td>
+            <button class="btn-table btn-done" onclick="toggle(${t.id})">${t.done ? 'Undo' : 'Done'}</button>
+            <button class="btn-table btn-del" onclick="del(${t.id})">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function toggle(id) {
+      tasks = tasks.map(t => t.id === id ? {...t, done: !t.done} : t);
+      save(); render();
+    }
+    function del(id) {
+      tasks = tasks.filter(t => t.id !== id);
+      save(); render();
+    }
+    function save() {
+      localStorage.setItem('mvaPlannerTable', JSON.stringify(tasks));
+    }
+  </script>
+</body>
+</html>

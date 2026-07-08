@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | MVA Portfolio</title>
+  <style>
+    /* ====== THEME: WHITE, NAVY, RED, LIGHT BROWN ====== */
+    :root{
+      --navy: #1a2b4c;      
+      --red: #c62828;       
+      --brown: #d7c9b6;     
+      --white: #ffffff;     
+      --light-bg: #f8f8f8;
+    }
+
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--light-bg);
+      color: #333;
+    }
+    .page-wrap {
+      max-width: 1100px;
+      margin: 30px auto;
+      background: var(--white);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border: 1px solid #e0e0e0;
+    }
+
+    /* ====== NAVIGATION ====== */
+    header {
+      background: #fff; 
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 55px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 0;
+      border: 1px solid #ddd;
+    }
+    nav ul li a {
+      display: block;
+      padding: 12px 18px;
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+      border-right: 1px solid #ddd;
+      transition: 0.2s;
+    }
+    nav ul li:last-child a {border-right: none;}
+    nav ul li a.active {background: var(--navy); color: var(--white); font-weight: bold;}
+    nav ul li a:hover {background: var(--red); color: var(--white);}
+    .menu-btn {display: none; font-size: 26px; cursor: pointer; color: var(--navy);}
+
+    /* ====== BANNER ====== */
+    .banner {
+      background: var(--brown);
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .banner h1 {
+      font-size: 38px;
+      font-family: Georgia, serif;
+      color: var(--navy);
+      font-weight: 400;
+    }
+
+    /* ====== PROJECTS GRID ====== */
+    .container {padding: 40px;}
+    .intro-text {
+      grid-column: 1 / -1;
+      margin-bottom: 30px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .project-card {
+      border: 1px solid #ddd;
+      background: var(--white);
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      box-shadow: 0 6px 15px rgba(26,43,76,0.15);
+      border-color: var(--navy);
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid #ddd;
+    }
+    .project-body {padding: 20px; flex-grow: 1; display: flex; flex-direction: column;}
+    .project-body h3 {
+      font-size: 18px;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .project-body p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+    .project-link {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      padding: 8px 16px;
+      text-decoration: none;
+      font-size: 13px;
+      border-radius: 4px;
+      text-align: center;
+      transition: 0.2s;
+    }
+    .project-link:hover {background: var(--red);}
+
+    /* ====== MOBILE FRIENDLY ====== */
+    @media (max-width: 992px) {
+      .projects-grid {grid-template-columns: repeat(2, 1fr);}
+    }
+    @media (max-width: 768px) {
+      .page-wrap {margin: 0; box-shadow: none; border: none;}
+      .menu-btn {display: block;}
+      nav {padding: 0 20px;}
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        border: none;
+        border-top: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      nav ul.show {display: flex;}
+      nav ul li a {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 15px 20px;
+        font-size: 16px;
+      }
+      .banner {padding: 30px 20px;}
+      .banner h1 {font-size: 28px;}
+      .container {padding: 25px 20px;}
+      .projects-grid {grid-template-columns: 1fr;}
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    
+    <!-- ====== NAVIGATION MENU: PROJECTS IS NOW 3RD ====== -->
+    <header>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li> <!-- 3RD LINK -->
+          <li><a href="planner.html">Academic planner</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+        </ul>
+        <div class="menu-btn" onclick="document.getElementById('navMenu').classList.toggle('show')">☰</div>
+      </nav>
+    </header>
+
+    <!-- ====== BANNER ====== -->
+    <div class="banner">
+      <h1>My Projects</h1>
+    </div>
+
+    <!-- ====== MAIN CONTENT: 3 SAMPLE PROJECTS ====== -->
+    <div class="container">
+      <p class="intro-text">
+        Here are some of the academic and personal projects I have completed. Each project includes a screenshot, a brief description, and a link to view more details.
+      </p>
+      
+      <div class="projects-grid">
+        
+        <!-- ====== PROJECT 1 ====== -->
+        <div class="project-card">
+          <img src="rosyfrontpage.png" alt="Student Portfolio Website Screenshot">
+          <div class="project-body">
+            <h3>Cakes and Bakes Website</h3>
+            <p>
+              A simple Cake Shop website that is mobile-friendly and aesthetically pleasing to the sweet tooth palette.
+             I built it with HTML, JavaScript and CSS. 
+            Rosy Cakes is a Lagos bakery homepage featuring pastel pink and 
+             wine branding. It showcases handcrafted cakes and pastries in a tabular format, with 
+              a 10-item menu, prices, including WhatsApp/Instagram contacts.
+            </p>
+            <a href="rosycakes.html" class="project-link" target="_blank">View it Live</a> 
+          </div>
+        </div>
+
+        <!-- ====== PROJECT 2 ====== -->
+        <div class="project-card">
+          <img src="proj6.jpg" alt="Right Angled Triangle Checker Screenshot">
+          <div class="project-body">
+            <h3>Right Angled Triangle Checker</h3>
+            <p>
+              A JavaScript tool that takes 2 angles and checks if they can form a right-angled triangle. Includes input validation and result feedback. 
+            </p>
+            <a href="rightanglechecker.html" class="project-link" target="_blank">View it Live</a> <!-- Add GitHub link -->
+          </div>
+        </div>
+
+        <!-- ====== PROJECT 3 ====== -->
+        <div class="project-card">
+          <img src="proj3.png" alt="Number Palindrome Checker Screenshot">
+          <div class="project-body">
+            <h3>Number Palindrome Checker</h3>
+            <p>
+             The Palindrome Number Checker is a simple web-based tool built with HTML, CSS, and JavaScript. Its purpose is to determine 
+             whether a number entered by the user is a palindrome- a number that reads the same both forwards and backwards, 
+              such as 121, 454, or 1331.
+            </p>
+         <a href="palindrome.html" class="project-link" target="_blank">View it Live</a><!-- Add Github link -->
+         </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('#navMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navMenu').classList.remove('show');
+      });
+    });
+  </script>
+</body>
+</html>

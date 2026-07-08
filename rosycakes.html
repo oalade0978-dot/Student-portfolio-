@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosy Cakes - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pastel-pink: #ffe8f0;
+      --white: #ffffff;
+      --wine: #8b1e3f;
+      --wine-light: #a63d5c;
+      --text: #4a4a4a;
+    }
+
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--pastel-pink);
+      color: var(--text);
+      text-align: center;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--white);
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--wine);
+      font-size: 32px;
+      letter-spacing: 2px;
+    }
+    header p {
+      color: var(--wine-light);
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 60px 20px 40px;
+    }
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: var(--wine);
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 15px;
+      max-width: 500px;
+      margin: 0 auto 25px;
+      line-height: 1.7;
+    }
+    .btn {
+      background: var(--wine);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .btn:hover {background: var(--wine-light);}
+
+    /* ===== MENU TABLE ===== */
+    .menu {
+      background: var(--white);
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(139,30,63,0.1);
+    }
+    .menu h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--wine);
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    th, td {
+      border: 1px solid var(--pastel-pink);
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: var(--wine);
+      color: var(--white);
+      font-weight: 500;
+    }
+    tr:nth-child(even) {
+      background: var(--pastel-pink);
+    }
+    .price {
+      text-align: left;
+      color: var(--wine);
+      font-weight: 500;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--wine);
+      color: var(--white);
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    /* ===== MOBILE ===== */
+    @media(max-width: 600px){
+      .hero h2 {font-size: 28px;}
+      table {font-size: 14px;}
+      th, td {padding: 10px;}
+    }
+  </style>
+</head>
+<body>
+<pclass="tagline"> Finger-licking yummy goodness</p>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>Rosy Cakes</h1>
+    <p>Baked Fresh Daily</p>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  
+      <img src="pinkcake2.png" width="200" height="160" name="middle" align="middle" scrolling="yes" title="pinkcake2">
+  <section class="hero">
+    <h2>Delight in Every Bite</h2>
+    <p>Handcrafted cakes and pastries made with love in our Lagos bakery. 
+          We use only real butter, fresh fruits, and a touch of rosy sweetness. 
+          Perfect for celebrations or just because.</p>
+    <a href="#menu" class="btn">View Menu</a>
+ 
+  </section>
+
+  <!-- ===== MENU TABLE ===== -->
+  <section class="menu" id="menu">
+    <h3>Our Pastry Menu</h3>
+    <table>
+      <tr>
+        <th>Pastry</th>
+        <th>Price</th> 
+      </tr>
+      <tr>
+        <td>Strawberry Shortcake Slice</td>
+        <td class="price">₦3,500</td>
+      </tr>
+      <tr>
+        <td>Vanilla Cupcake - 1pc</td>
+        <td class="price">₦1,900</td>
+      </tr>
+      <tr>
+        <td>Chocolate Fudge Cake Slice</td>
+        <td class="price">₦4,000</td>
+      </tr>
+      <tr>
+        <td>Red Velvet Cupcake - 1pc</td>
+        <td class="price">₦1,900</td>
+      </tr>
+      <tr>
+        <td>Cherry Sprinkle Cake Slice</td>
+        <td class="price">₦2,800</td>
+      </tr>
+      <tr>
+        <td>Butter Croissant</td>
+        <td class="price">₦1,000</td>
+      </tr>
+      <tr>
+        <td>Raspberry Macaron - 1pc</td>
+        <td class="price">₦1900</td>
+      </tr>
+      <tr>
+        <td>Cinnamon Roll</td>
+        <td class="price">₦3,200</td>
+      </tr>
+      <tr>
+        <td>Cheesecake Slice</td>
+        <td class="price">₦3,800</td>
+      </tr>
+      <tr>
+        <td>Mini Fruit Cake Slice</td>
+        <td class="price">₦5,000</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2026 Rosy Cakes  <br> Order via WhatsApp: +234 802 000 0000 
+or Instagram @rosycakesofdelight</p>
+  </footer>
+
+</body>
+</html>

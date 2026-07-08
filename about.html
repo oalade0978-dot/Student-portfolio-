@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | MIVA Portfolio</title>
+  <style>
+        /* ====== THEME: WHITE, NAVY, RED, LIGHT BROWN ====== */
+    :root{
+      --navy: #1a2b4c;      
+      --red: #c62828;       
+      --brown: #d7c9b6;     
+      --white: #ffffff;     
+      --light-bg: #f8f8f8;
+    }
+
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--light-bg);
+      color: #333;
+    }
+    .page-wrap {
+      max-width: 1100px;
+      margin: 30px auto;
+      background: var(--white);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border: 1px solid #e0e0e0;
+    }
+
+    /* ====== NAVIGATION ====== */
+    header {
+      background: #fff; 
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 55px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 0;
+      border: 1px solid #ddd;
+    }
+    nav ul li a {
+      display: block;
+      padding: 12px 18px;
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+      border-right: 1px solid #ddd;
+      transition: 0.2s;
+    }
+    nav ul li:last-child a {border-right: none;}
+    nav ul li a.active {background: var(--navy); color: var(--white); font-weight: bold;}
+    nav ul li a:hover {background: var(--red); color: var(--white);}
+    .menu-btn {display: none; font-size: 26px; cursor: pointer; color: var(--navy);}
+  
+/* BANNER */
+    .banner {
+      background: var(--brown); text-align: center; padding: 40px 20px;
+    }
+    .banner h1 {
+      font-size: 38px; font-family: Georgia, serif; color: var(--navy);
+      font-weight: 400; letter-spacing: 1px;
+    }
+    /* CONTENT */
+    .container {padding: 40px;}
+    .about-grid {
+      display: grid; grid-template-columns: 240px 1fr; gap: 40px; align-items: flex-start;
+    }
+    .photo-col img {
+      width: 100%; border: 1px solid #fff; display: block;
+    }
+    .text-col h2 {
+      font-size: 26px; color: var(--navy); margin-bottom: 25px;
+      border-bottom: 2px solid var(--brown); padding-bottom: 8px;
+    }
+    .section {margin-bottom: 30px;}
+    .section h3 {
+      font-size: 18px; color: var(--navy); margin-bottom: 10px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section h3 span {color: var(--red); font-weight:bold;} /* Text label instead of emoji */
+    .section p, .section ul {
+      font-size: 15px; line-height: 1.8; color: #444;
+    }
+    .section ul {padding-left: 20px;}
+    .skill-tag {
+      display: inline-block; background: var(--light-bg); border: 1px solid #ddd;
+      padding: 5px 12px; border-radius: 15px; font-size: 13px; margin: 4px 4px 0 0;
+    }
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .page-wrap {margin: 0; border: none;}
+      .menu-btn {display: block;}
+      nav ul {
+        display: none; flex-direction: column; position: absolute; top: 100%; left: 0;
+        width: 100%; background: var(--white); border-top: 1px solid #ddd;
+      }
+      nav ul.show {display: flex;}
+      nav ul li a {border-right: none; border-bottom: 1px solid #eee; padding: 15px 20px;}
+      .about-grid {grid-template-columns: 1fr; gap: 25px; text-align: center;}
+      .photo-col {max-width: 220px; margin: 0 auto;}
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    
+<!-- ====== NAVIGATION MENU: ABOUT ME IS 2ND ====== -->
+    <header>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About me</a></li>
+          <li><a href="projects.html">Projects</a></li> <!-- FIXED TYPO -->
+          <li><a href="planner.html">Planner</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+         </ul>
+        <div class="menu-btn" onclick="document.getElementById('navMenu').classList.toggle('show')">☰</div>
+      </nav>
+    </header>
+
+    <!-- BANNER -->
+    <div class="banner">
+      <h1>About Me</h1>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+      <div class="about-grid">
+        <div class="photo-col">
+          <img src="me2.png" alt="Student Photograph">
+        </div>
+        <div class="text-col">
+          <h2>Get to Know Oluwaseyi Alade</h2>
+          
+          <!-- 1. EDUCATIONAL BACKGROUND -->
+          <div class="section">
+            <h3><span>Loft</span> Educational Background</h3> <!-- FIXED: 1 h3 only -->
+            <p>
+              I am a faculty of Computer Science student at MIVA Open University. I have an educational background in Fine Arts and I am currently in 100 Level studying Software Engineering. 
+              My coursework covers foundational programming, software architecture, data structures, 
+              and the Software Development Life Cycle (SDLC). I am committed to building a strong 
+              academic foundation in technology and information systems.
+            </p>
+          </div>
+
+          <!-- 2. CAREER ASPIRATIONS -->
+          <div class="section">
+            <h3><span>Goal</span> Career Aspirations</h3> <!-- FIXED -->
+            <p>
+              My goal is to build useful, reliable, efficient, and maintainable software. I aspire to work on projects that use 
+              technology and art aesthetics to solve educational, mental and social challenges in Nigeria and beyond.
+            </p>
+          </div>
+
+          <!-- 3. TECHNICAL SKILLS -->
+          <div class="section">
+            <h3><span>Core</span> Technical Skills</h3> <!-- FIXED -->
+            <p>
+              <span class="skill-tag">HTML5 & CSS3</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Photoshop</span>
+              <span class="skill-tag">Adobe Publisher</span>
+              <span class="skill-tag">Git & GitHub</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Medibang Paint Pro</span>
+              
+            </p>
+            <p style="margin-top:10px;">I am currently learning PHP to expand my backend development skills.</p>
+          </div>
+
+          <!-- 4. HOBBIES AND INTERESTS -->
+          <div class="section">
+            <h3><span>Fun</span> Hobbies and Interests</h3> <!-- FIXED -->
+            <ul>
+              <li><b>Reading:</b> I enjoy tech blogs, self-development books, and oil painting.</li>
+              <li><b>Learning:</b> I take online courses on platforms like Udemy and W3Schools.</li>
+              <li><b>Design:</b> I like exploring UI/UX design and creating website layouts.</li>
+              <li><b>Community:</b> I volunteer to teach basic computer skills to secondary school students.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('#navMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navMenu').classList.remove('show');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palindrome Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f9;
+    }
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+      width: 200px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background: #4CAF50;
+      color: white;
+      border-radius: 6px;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Palindrome Number Checker</h2>
+    <input type="number" id="numInput" placeholder="Enter a number">
+    <br>
+    <button onclick="checkPalindrome()">Check</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function checkPalindrome() {
+      let num = document.getElementById("numInput").value;
+      let result = document.getElementById("result");
+      
+      if (num === "") {
+        result.textContent = "Please enter a number";
+        result.style.color = "red";
+        return;
+      }
+
+      // Reverse the number as string
+      let reversed = num.split("").reverse().join("");
+      
+      if (num === reversed) {
+        result.textContent = num + " is a Palindrome 👌🏾✅";
+        result.style.color = "green";
+      } else {
+        result.textContent = num + " is NOT a Palindrome 😞❌❗";
+        result.style.color = "purple";
+      }
+    }
+  </script>
+</body>
+</html>
