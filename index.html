@@ -71,6 +71,20 @@
       background: var(--brown);
       text-align: center;
       padding: 40px 20px;
+          /* NEW: slide in from right */
+      animation: slideInRight 0.6s ease-out;
+    }
+
+    /* NEW: keyframe for slide in */
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100%); /* start off-screen right */
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0); /* end in normal position */
+        opacity: 1;
+      }
     }
     .banner h1 {
       font-size: 38px;
