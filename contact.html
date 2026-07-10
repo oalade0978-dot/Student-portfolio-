@@ -78,6 +78,20 @@
     }
     .content {
       padding: 30px 40px;
+          /* NEW: slide in from right */
+      animation: slideInRight 0.6s ease-out;
+    }
+
+    /* NEW: keyframe for slide in */
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100%); /* start off-screen right */
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0); /* end in normal position */
+        opacity: 1;
+      }
     }
     .content h2 {
       color: #1a2b4c; /* NAVY */
